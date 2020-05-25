@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Platzi Landing</title>
+    <style>
+        body{
+            font-family: "Century Gothic";
+            margin: 0;
+        }
+        .hero{
+            background: #23475b;
+            color: #fff;
+            padding: 32px 15px;
+
+            display: grid;
+            grid-template-columns: minmax(auto, 1024px);
+            justify-content: center;
+        }
+        .hero-container{
+            display:grid;
+            grid-template-columns: 70px 1fr 320px;
+            gap: 10px;
+            grid-template-areas:    "badge title form"
+                                    ". description form"
+                                    ". countdown form";                     
+        }
+        .badge img{
+            max-width: 70px;
+            grid-area: badge;
+        }
+        .title{
+            font-size: 36px;
+            font-weight: normal;
+            margin: 0;
+            display: flex;
+            align-items: center;
+
+            grid-area: title;
+        }
+        .description{
+            grid-area: description;
+        }
+        .form{
+            text-align: center;
+            background: rgba(255, 255, 255, .9);
+            padding: 1.5em;
+            border-radius: 10px;
+            grid-area: form;
+        }
+        .form input{
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #eeeef1;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        .form h4{
+            font-size: 20px;
+            color: #35373f;
+            margin-top: .3em;
+        }
+        .form button{
+            background: #98ca3f;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border:none;
+            border-bottom:5px solid #6d932b;
+            display: inline-block;
+        }
+        .countdown{
+            grid-area: countdown;
+        }
+        p{
+            margin: 0;
+        }
+        .countdown p{
+            font-size: 20px;
+            text-align: center;
+            font-weight: 300;
+        }
+        .countdown span{
+            font-size: 33px;
+        }
+        .countdown span:after{
+            content:":";
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .countdown span:last-child:after{
+            display: none;
+        }
+
+        @media screen and (max-width: 768px){
+            .hero-container{
+                grid-template-columns: 70px 1fr;
+                grid-template-areas:    "badge title"
+                                        "description description"
+                                        "form form"
+                                        "countdown countdown";                     
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-container">
+            <div class="badge">
+                <img src="./badge.webp" alt="Logo">
+            </div>
+            <div class="title">
+                Curso de React.js
+            </div>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore cumque necessitatibus porro asperiores beatae sint, ipsam officia debitis natus placeat, alias accusamus repellat temporibus et? Vero neque veritatis molestias ratione.</p>
+            </div>
+            <form class="form">
+                <h4>Registrarse a Platzi</h4>
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Correo Electronico">
+                <button type="submit">Start Now</button>
+            </form>
+            <div class="countdown">
+                <p>Lanzamiento:</p>
+                <p>
+                    <span>01d</span>
+                    <span>03h</span>
+                    <span>09m</span>
+                    <span>05s</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
